@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Quadrado Número</title>
+</head>
+<body>
+
+    <section id="output"></section>
+
+    <script>
+       let texto = "";
+       
+       let num = Number(prompt("Escreva aqui um número."));
+
+       texto = `<p>O quadrado do número ${num} é ${num ** 2}.`
+     
+        let output = document.getElementById('output');
+                output.innerHTML = texto;
+        
+    </script>
+    
+</body>
+</html>

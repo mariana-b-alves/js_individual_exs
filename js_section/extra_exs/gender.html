@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Género</title>
+</head>
+<body>
+
+    <section id="output"></section>
+
+    <script>
+        let texto = " ";
+
+        let nome = prompt("Escreva aqui o seu nome.");
+        let genero = prompt("Qual é o seu género?")
+
+        if(genero == "feminino" || genero == "Feminino" || genero == "f" || genero == "F"){
+            texto = `Olá, Srª. ${nome}.`
+        } else {
+            texto = `Olá, Sr. ${nome}.`
+        }
+            
+        let output = document.getElementById('output');
+                output.innerHTML = texto;
+        
+    </script>
+    
+</body>
+</html>

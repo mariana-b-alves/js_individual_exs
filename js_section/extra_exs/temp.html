@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Temperatura</title>
+</head>
+<body>
+
+    <section id="output"></section>
+
+    <script>
+        let texto = " ";
+        
+        let temp = Number(prompt("Escreva aqui um número."))
+
+        if (temp <= 23){
+            texto = `<p>A temperatura é ${temp}ºC.</p>
+            <p>Ligar o termostasto para o quente.</p>`
+        } else {
+            texto = `<p>A temperatura é ${temp}ºC.</p> 
+            <p>Ligar o termostasto para o frio</p>`
+        }
+       
+            let output = document.getElementById('output');
+                output.innerHTML = texto;
+        
+    </script>
+    
+</body>
+</html>
