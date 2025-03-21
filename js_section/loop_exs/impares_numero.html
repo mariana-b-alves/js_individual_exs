@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Estruturas de Repetição</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Loops - Estruturas de Repetição</h1>
+    <main>
+        <section id="output"></section>
+
+        <script>
+            
+            let texto = " ";
+
+            let num1 = Number(prompt("Inserir 1º número(maior)"));
+            let num2 = Number(prompt("Inserir 2º número(maior)"))
+
+            let menor = (num1 < num2) ? num1 : num2
+            let maior = (num1 > num2) ? num1 : num2
+
+            while(menor < maior){
+                if (menor % 2 == 1){
+                    texto += `<p>${menor}</p>`
+                }
+                menor ++;
+            }
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>

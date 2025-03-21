@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Nome e Apelido</title>
+</head>
+<body>
+
+    <section id="output"></section>
+
+    <script>
+         let texto = " ";
+
+         let num1 = Number(prompt("Escreva aqui um número"));
+
+         let tabuada = " "
+
+         for (tabuada = 0; tabuada <= 10; tabuada++){
+            texto = `<h3>Tabuada do ${num1}:</h3>
+            <p>${num1 * tabuada}<p>`
+         }
+
+         
+        
+        
+        let output = document.getElementById('output');
+                output.innerHTML = texto;
+        
+
+    </script>
+    
+</body>
+</html>
