@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt Nome e Apelido</title>
+    <title>JAVASCRIPT - Ex. Impares</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <section id="output"></section>
-
-    <script>
-         let texto = " ";
-
-         let num1 = Number(prompt("Escreva aqui um número"));
-
-         let tabuada = " "
-
-         for (tabuada = 0; tabuada <= 10; tabuada++){
-            texto = `<h3>Tabuada do ${num1}:</h3>
-            <p>${num1 * tabuada}<p>`
-         }
-
-         
+    <h1>JS - Loops - Tabuada</h1>
+    <main>
         
-        
-        let output = document.getElementById('output');
-                output.innerHTML = texto;
-        
+        <section id="output"></section>
 
-    </script>
-    
+        <script>
+            /**/
+            let texto = " ";
+
+            let num1 = Number(prompt("Inserir um número."));
+            
+
+            for(let i = 0; i <= 10; i++){
+                    texto += `<p>${num1 * i}</p>`;
+            }
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
 </body>
 </html>

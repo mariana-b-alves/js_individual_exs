@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Ex. Impares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Loops - Advinha</h1>
+    <main>
+        
+        <section id="output"></section>
+
+        <script>
+            /**/
+            let texto = " ";
+
+            let num1 = Number(prompt("Escreve um número entre 0 e 20."));
+
+            let altNum = Math.random((Math.round * 20) + 1);
+
+            let contador = 1;
+
+            if (num1 > altNum){
+                texto = `<p>O número ${num1} é muito alto. Tenta outra vez. </p>
+                    <p>Tentativas: ${contador}</p>`
+                    contador ++;
+            } else if (num1 < altNum){
+                texto = `<p>O número ${num1} é muito baixo. Tenta outra vez. </p>
+                    <p>Tentativas: ${contador}</p>`
+                    contador ++;
+            } else{
+                texto = `<p>Parabéns, o número ${altNum} era o número certo. </p>
+                    <p>Tentativas: ${contador}</p>`
+            }
+            
+
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>

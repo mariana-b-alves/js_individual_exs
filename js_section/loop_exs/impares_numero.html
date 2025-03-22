@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAVASCRIPT - Estruturas de Repetição</title>
+    <title>JAVASCRIPT - Ex. Impares</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>JS - Loops - Estruturas de Repetição</h1>
+    <h1>JS - Loops - Ex. Impares</h1>
     <main>
+        
         <section id="output"></section>
 
         <script>
-            
+            /**/
             let texto = " ";
 
             let num1 = Number(prompt("Inserir 1º número(maior)"));
@@ -22,10 +23,10 @@
             let maior = (num1 > num2) ? num1 : num2
 
             while(menor < maior){
-                if (menor % 2 == 1){
-                    texto += `<p>${menor}</p>`
+                if (maior % 2 == 1){
+                    texto += `<p>${maior}</p>`
                 }
-                menor ++;
+                maior --;
             }
 
             let output = document.getElementById('output');
