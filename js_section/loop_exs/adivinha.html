@@ -16,26 +16,24 @@
             /**/
             let texto = " ";
 
-            let num1 = Number(prompt("Escreve um número entre 0 e 20."));
-
             let altNum = Math.random((Math.round * 20) + 1);
 
-            let contador = 1;
+            let num1 = Number(prompt("Escreve um número entre 0 e 20."));
+        
+            let contador = 0;
 
-            if (num1 > altNum){
+            if (num1 != altNum){
+                contador ++;
                 texto = `<p>O número ${num1} é muito alto. Tenta outra vez. </p>
-                    <p>Tentativas: ${contador}</p>`
-                    contador ++;
+                    <p>Tentativas: ${contador ++}</p>`
             } else if (num1 < altNum){
+                contador ++;
                 texto = `<p>O número ${num1} é muito baixo. Tenta outra vez. </p>
-                    <p>Tentativas: ${contador}</p>`
-                    contador ++;
+                    <p>Tentativas: ${contador ++}</p>`
             } else{
-                texto = `<p>Parabéns, o número ${altNum} era o número certo. </p>
+                texto = `<p>Parabéns, o número ${num1} era o número certo. </p>
                     <p>Tentativas: ${contador}</p>`
             }
-            
-
 
             let output = document.getElementById('output');
             output.innerHTML = texto;
