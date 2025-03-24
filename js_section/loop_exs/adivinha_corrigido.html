@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Advinha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Loops - Adivinha</h1>
+    <main>
+        
+        <section id="output"></section>
+
+        <script>
+            /*Versão do João*/
+            let texto = " ";
+
+            //Criar número aleatório
+
+            /*
+            Math.random ()* - gerar número aleatório entre 0 e 1
+            */
+
+            /*gerar entre 0 (zero) e outro número:
+            
+            Math.random() * num;
+            */
+
+            /*gerar nums entre um intervalo de valores
+            
+            0 - 1
+
+            x 20
+
+            0 - 20 (entre 0 e número)
+
+
+            + 30
+
+            30. - 50
+
+            vi (valor incial), vf (valor final)
+
+            Math.random() * (vf - vi) + vi (Fórmula para nums entre intervalo de valores)
+            -> Math.random() * (50 - 30) + 30
+
+            Math.round(Math.random() * (vf - vi) + vi) 
+            */
+
+            let numAleatorio = Math.random() * 20;
+
+            let numAleatorioInteiro = Math.round(numAleatorio);
+
+            let tentativas = 1;
+
+
+            // pedir num ao utilizador
+
+            let numero = Number(prompt("Tente adivinhar um número entre 0 (zero) e 20 (vinte)."));
+
+            //console.log(numAleatorioInteiro)
+
+            while (numero != numAleatorio){
+                if(numero < numAleatorioInteiro){
+                    alert (`O número ${numero} é demasiado baixo.`)
+                } else {
+                    alert (`O número ${numero} é demasiado alto.`)
+                }
+                texto += `<h3>${numero}</h3>`
+
+                numero = Number(prompt("Tente adivinhar um número entre 0 (zero) e 20 (vinte)."));
+                tentativas ++
+            
+            }
+
+            texto += `
+            <hr>
+            <p>🥳🥳 Parabéns, acertou no número: ${numAleatorioInteiro}🥳🥳.
+            <p>Em ${tentativas} tentativas.`
+            
+
+
+            
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>
