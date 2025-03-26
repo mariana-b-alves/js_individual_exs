@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentar 8 elementos numa array e criar uma array * 3</title>
+</head>
+<body>
+
+    <section id="output"></section>
+
+    <script>
+    let texto = " ";
+
+    //Ask the user to write a number so it can be multiplied from 1 to 10
+    let num = Number(prompt("Escreve um número para ser multiplicado."));
+
+    //For - Define i as variable to multiply the user's number; value starting at one, ending at 10, and incrementing until the cap value
+    for (let i = 1; i <= 10; i++){
+        //Creating a array which holds the result of the multiplication
+        arrayA = [num * i];
+        //Text returns the multiplication (num * i) and its result (arrayA)
+        texto += `
+        <br><p>${num} x ${i} = ${arrayA}` 
+    }
+
+   
+    
+    let output = document.getElementById('output');
+            output.innerHTML = texto;
+        
+    </script>
+    
+</body>
+</html>

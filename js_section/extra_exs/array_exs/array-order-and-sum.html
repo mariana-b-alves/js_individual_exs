@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentar 8 elementos numa array e criar uma array * 3</title>
+</head>
+<body>
+
+    <section id="output"></section>
+
+    <script>
+
+        
+//Ler os 12 elementos de um Vector A. Após a sua leitura, colocar os seus elementos por ordem crescente usando o método de Bolhas. Depois de ler um vector B também com 12 elementos, ordenar os elementos de B por ordem crescente usando também o método de Bolhas. Construír um Vector C, em que cada elemento de C é a soma dos elementos correspondentes de A e B. Colocar por ordem decrescente os elementos do Vector C, usando de novo o método de Bolhas e apresentar os seus valores.
+
+    let texto = " ";
+
+    let arrayA = [2, 6, 12, 24, 38, 50, 67, 71, 89, 98, 100, 135];
+
+    //.sort() - sorts the numbers by the smallest first number (100 comes before 2, in the case);
+    //a - b - sorts the numbers in right spot, from smallest to largest (2 comes before 100)
+
+    arrayA.sort(function(a, b){return a - b});
+
+    texto += `
+    <p>${arrayA}</p>    
+    <hr>` 
+
+    
+    let arrayB = [1, 2, 8, 14, 21, 43, 63, 64, 70, 82, 86, 100];
+
+    //Repeating the same thing as arrayA
+    arrayB.sort(function(a, b){return a - b});
+
+    texto += `
+    <p>${arrayB}</p>    
+    <hr>` 
+
+    //Adding the values from arrayA and arrayB
+    let arrayC = arrayC.map(arrayC =>arrayA + arrayB);
+
+    
+
+
+
+  
+
+
+   
+    
+    let output = document.getElementById('output');
+            output.innerHTML = texto;
+        
+    </script>
+    
+</body>
+</html>
+
+
+

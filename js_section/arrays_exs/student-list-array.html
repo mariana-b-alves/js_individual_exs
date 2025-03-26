@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Name Array</title>
+</head>
+<body>
+
+    <h1>Students Name Array</h1>
+    <hr>
+
+    <section id="output"></section>
+
+    <script>
+         let texto = " ";
+
+         /*Ask for the students' name, save them in an array ordered from A to Z*/
+
+         //declare variables
+         let numStudents, nameStudents;
+
+         nameStudents = [];
+
+         //Ask user fro the number of students the class has
+         numStudents = Number(prompt("Insert the number of students on the class"));
+
+        //NOTA: Para efeitos de boa prática / consistência, começar com i = 0
+
+        //NOTA: Aliás, ser consistentes com a maneira como apresentamos o nosso código (usar camel case, )
+         for (let i = 0; i < numStudents; i++){
+            let students = prompt(`Insert the name of the student number ${i+1}.`);
+            nameStudents.push(students.toUpperCase());
+         }
+         //Sort students' name
+         nameStudents.sort();
+
+         //Return the names from the list
+
+         texto += `<h3>Students' List: </h3>`
+
+         //Const - constante
+         for (const students of nameStudents){
+            texto += `
+            <p> ${students} </p>`;
+         }
+
+  
+        let output = document.getElementById('output');
+                output.innerHTML = texto;
+        
+
+    </script>
+    
+</body>
+</html>
