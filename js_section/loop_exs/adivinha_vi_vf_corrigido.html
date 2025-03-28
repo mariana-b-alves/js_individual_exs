@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT - Advinha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JS - Loops - Adivinha</h1>
+    <main>
+        <script src="library.js"></script>
+        
+        <section id="output"></section>
+
+        <script>
+            /*Versão do João*/
+            let texto = " ";
+
+
+            let numAleatorioInteiro = randomIntBetweenNumbers (0, 2);
+
+            // pedir num ao utilizador
+
+            let numero = Number(prompt("Tente adivinhar um número entre 30 (trinta) e 50 (cinquenta)."));
+
+            //console.log(numAleatorioInteiro)
+
+            while (numero != numAleatorio){
+                if(numero < numAleatorioInteiro){
+                    alert (`O número ${numero} é demasiado baixo.`)
+                } else {
+                    alert (`O número ${numero} é demasiado alto.`)
+                }
+                texto += `<h3>${numero}</h3>`
+
+                numero = Number(prompt("Tente adivinhar um número entre 30 (trinta) e 50 (cinquenta)."));
+                tentativas ++
+            
+            }
+
+            texto += `
+            <hr>
+            <p>🥳🥳 Parabéns, acertou no número: ${numAleatorioInteiro}🥳🥳.
+            <p>Em ${tentativas} tentativas.`
+            
+
+            let output = document.getElementById('output');
+            output.innerHTML = texto;
+        </script>
+    </main>
+</body>
+</html>
