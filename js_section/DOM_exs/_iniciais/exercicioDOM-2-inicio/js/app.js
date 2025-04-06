@@ -29,7 +29,9 @@ let books = [
                 title: 'React Hooks in Action',
                 author: "John Larsen",
                 alreadyRead: true,
-                imageUrl: '/_iniciais/exercicioDOM-2-inicio/livros/reacthooks.jpg', //Original code changed as I have tonnes and tonnes of subfolders 
+                imageUrl: '/_iniciais/exercicioDOM-2-inicio/livros/reacthooks.jpg', //Original code changed as I have tonnes and tonnes of subfolders
+                                                                                    //Otherwise, the links would be broken
+                                                                                    //And there would be no pics for anyone
             },
         ];
 
@@ -46,7 +48,7 @@ for (let i = 0; i < books.length; i++) {
 
   //Gather info from bookArray and add it to the original HTML
   //Rather than writing everything by hand, by adding ${variable.nestedArrayItem},
-  //the information is put in its respective place with minimal coding
+  //the information is put in its respective places with minimal coding
   //Also, I didn't add classes. No need, imo. :D
   article.innerHTML += `
     <h1>${bookArray.title}</h1>
