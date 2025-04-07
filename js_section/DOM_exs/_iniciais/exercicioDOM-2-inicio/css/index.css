@@ -10,6 +10,11 @@
 body{
     background-color: rgb(160, 209, 225);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
 }
 
 /*ARTICLE STYLES*/
@@ -18,11 +23,6 @@ article{
     border: 4px double black;
     background-color: white;
     margin-bottom: .5em;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 /*SECTION STYLES*/
