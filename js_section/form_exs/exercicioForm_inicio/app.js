@@ -1,32 +1,30 @@
-const showForm = document.getElementById('showForm');
-let addButton = document.getElementById('addButton')
+//NOTA: Excecionalmente não vou separar a minha versão e a correçõ
+
+let showForm = document.getElementById('showForm');
+const addButton = document.getElementById('addButton')
 let itemDescription = document.getElementById('itemDescription')
 let newItemForm = document.getElementById('newItemForm');
-let ul = document.querySelector('ul')
-const li = document.querySelector('li')
+const ul = document.querySelector('ul');
+let li = document.querySelector('li');
 
 //1-Hide form by clicking newItemButton btn; keep newItemButton btn visible (DONE)
 
+newItemForm.className = "hide";
 
-showForm.addEventListener('click', function(){
-    if (showForm === 'block'){
-        newItemForm.style.display = 'none'
-    } else{
-        newItemForm.style.display = 'none'
-    }
-})
+showForm.addEventListener('click', hideBtn, false);
 
+function hideBtn() {
+    showForm.addEventListener('click', () =>{    
+        newItemForm.className = "show";
+        newItemButton.className = "hide"
+    })
+   
+}
 
 //2-By clicking again on the newItemButton btn, show form and hide btn again
 
-showForm.addEventListener('click', function(){
-    if (showForm === 'block'){
-        newItemForm.style.display = 'none'
-    } else{
-        newItemForm.style.display = 'none'
-    }
-})
-//3 -Input a new element and, by clicking on the "Add" btn, add a new item áto the list, hide the form again, and newItemButton btn (DONE)
+
+//3 -Input a new element and, by clicking on the "Add" btn, add a new item to the list, hide the form again, and newItemButton btn (DONE)
 
 //Create an empty vari.
 let n = [];
@@ -39,31 +37,34 @@ let n = [];
         ul.innerHTML += `<li>${itemDescription}</li>`;
 
          // Hide the newItemForm immediately after adding the li
-         newItemForm.style.display = 'none';
+         newItemForm.className = 'show';
 
          // Show newItemButton btn again
-         newItemButton.style.display = 'block';
+         newItemButton.className = 'block';
     });
 
-//4 - When clicking on an item, check if it has the 'complete' class:
+//4 - When clicking on an item, check if it has the 'complete' class: (DONE)
 //If it does, then eliminate the item
 //Else, apply 'complete' class and move it to the end of the list
 
-li.setAttribute('class', 'complete'); //Definir 2 params: nome e valor
+li.setAttribute('class', 'complete');
 
-li.addEventListener('click', () =>{
-    console.log(li.hasAttribute("complete")
-    )
-    if (li.hasAttribute("complete")){
-        li.remove(li)
+li.addEventListener('click', () => {
+    if (li.classList.contains('complete')){
+        li.remove();
     } else{
         li.classList.add('complete');
+        li.parentElement.appendChild(li)
     }
-})
+}, false);
 
 //5-Show the items that are yet to be bought in the h2, inside a <span> tag.
-let span = document.createElement ('span');
+let span = document.createElement('span');
 span.textContent = ul.children.length;
 ul.previousElementSibling.append(span);
+
+
+//6-After deleting the li item, restore the last item by doing CTRL-Z
+
 
     
