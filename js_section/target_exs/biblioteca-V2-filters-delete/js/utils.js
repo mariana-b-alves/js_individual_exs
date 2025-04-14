@@ -20,4 +20,7 @@ const getBooksByTitle = (text) => livros.filter( livro => {
 });
 
 //Delete do book pr id
-const deleteBook = (id) => livros = livros.filter ( livro => livro.id != id);
+const deleteBook = (id) => livros = livros.filter ( livro => livro.id !== Number(id));
+
+//Criar popup
+const getPopup = (id) => livros = livros.filter ( livro => livro.imageUrlGr);

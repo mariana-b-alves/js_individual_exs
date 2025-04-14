@@ -47,7 +47,15 @@ function gridEvents(e){
     if (e.target.dataset.type = 'deleteBtn'){
         showBooks(deleteBook(e.target.dataset.idbook));
     }
-}
+
+     if (e.target.dataset.src = 'imageUrl'){
+        showBooks(getPopup('imageUrlGr'))
+    } 
+  
+    if (e.target.dataset.src === 'imageUrl') {
+      showBooks(getPopup(livros.imageUrlGr));
+        }
+    }
 
 
 //?LISTENERS
@@ -63,7 +71,7 @@ function showBooks(arrayBooks){
             <article>
                 <h1>${book.title}</h1>
                 <h2>${book.author}</h2>
-                <img src="livros/${book.imageUrl}" alt="${book.title}}">
+                <img src="livros/${book.imageUrl}" alt="${book.title}" data-idbook=${book.imageUrlGr}>
                 <p>Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
                 <button class="btn" data-type=deleteBtn data-idbook=${book.id}>Delete</button>
                 <button class="btn" data-type=editBtn data-idbook=${book.id}>Edit</button>
@@ -71,8 +79,5 @@ function showBooks(arrayBooks){
         `;
     })
 }
-
-// 2 - Inside each card, add a delete btn to delete each book
-
 
 
