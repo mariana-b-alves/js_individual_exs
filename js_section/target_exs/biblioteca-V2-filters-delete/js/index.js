@@ -1,6 +1,7 @@
 //?DEFINE LOCAL VARIS.
 let grid = document.getElementById('grid');
-let filters = document.getElementById('filters')
+let filters = document.getElementById('filters');
+let popup = document.getElementById('popup');
 
 //changeEvent = muda a cada introdução de caracter (melhor para forms)
 //inputEvent = alterar o valor do input (input type = text; textarea...)
@@ -8,7 +9,8 @@ let filters = document.getElementById('filters')
 //?APP EVENTS
 filters.addEventListener('click', filterEvents, false);
 filters.addEventListener('input', filterEvents, false);
-grid.addEventListener('click', gridEvents, false)
+grid.addEventListener('click', gridEvents, false);
+popup.addEventListener('click', closePopup, false);
 
 //?BUSINESS LOGIC
 
@@ -16,52 +18,51 @@ grid.addEventListener('click', gridEvents, false)
 function filterEvents(e){
     let el = e.target;
 
-    if(el.id === 'allBtn'){
+    if (el.id === 'allBtn') {
         showBooks(getBooks());
     }
 
-    if(el.id === 'readBtn'){
+    if (el.id === 'readBtn') {
         showBooks(getReadBooks());
     }
 
-    if(el.id === 'notReadBtn'){
+    if (el.id === 'notReadBtn') {
         showBooks(getNotReadBooks());
     }
 
-    if((el.id === 'searchTxt') && (e.type === 'input')){
+    if ((el.id === 'searchTxt') && (e.type === 'input')){
         let text = el.value.toLowerCase();
-        showBooks(getBooksByTitle(el.value));
+        showBooks(getBooksByAuthorTitle(text))
     }
+
+
 }
 
 function gridEvents(e){
-    console.log(e)
-    if((e.target.nodeName === 'P') && (e.target.textContent.search('✅') > -1)){
+    console.log(e);
+
+    if ((e.target.nodeName === 'P') && (e.target.textContent.search('✅') > -1)  ){
         showBooks(getReadBooks());
     }
 
-    if((e.target.nodeName === 'P') && (e.target.textContent.search('❌') > -1)){
+    if ((e.target.nodeName === 'P') && (e.target.textContent.search('❌') > -1)  ){
         showBooks(getNotReadBooks());
     }
 
-    if (e.target.dataset.type = 'deleteBtn'){
-        showBooks(deleteBook(e.target.dataset.idbook));
+    if (e.target.dataset.type === 'deleteBtn'){
+        showBooks(deleteBook(e.target.dataset.idbook))
     }
 
-     if (e.target.dataset.src = 'imageUrl'){
-        showBooks(getPopup('imageUrlGr'))
-    } 
-  
-    if (e.target.dataset.src === 'imageUrl') {
-      showBooks(getPopup(livros.imageUrlGr));
-        }
+    if (e.target.dataset.type === 'thumbnail'){
+        showPopup(e.target.dataset.popup)
     }
+}
+
 
 
 //?LISTENERS
-console.log(livros);
+//console.log(livros);
 showBooks(getBooks());
-
 
 function showBooks(arrayBooks){
     grid.innerHTML = '';
@@ -70,11 +71,20 @@ function showBooks(arrayBooks){
         grid.innerHTML += `
             <article>
                 <h1>${book.title}</h1>
+
                 <h2>${book.author}</h2>
-                <img src="livros/${book.imageUrl}" alt="${book.title}" data-idbook=${book.imageUrlGr}>
+
+                <img src="livros/${book.imageUrl}" 
+                     alt="${book.title}}" 
+                     data-type='thumbnail' 
+                     data-popup='livros/${book.imageUrlGr}'
+                     class='thumbnail'
+                >
                 <p>Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
-                <button class="btn" data-type=deleteBtn data-idbook=${book.id}>Delete</button>
-                <button class="btn" data-type=editBtn data-idbook=${book.id}>Edit</button>
+
+                <button class='btn' data-type='deleteBtn' data-idbook=${book.id}> Delete </button>
+
+                <button class='btn' data-type='editBtn' data-idbook=${book.id}> Edit </button>
             </article>
         `;
     })

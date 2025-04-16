@@ -62,3 +62,34 @@ input.searchTxt{
     outline: none;
 }
 
+
+
+
+section.popup{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top:0;
+    left: 0;
+
+    display: none;
+
+}
+
+
+
+
+
+section.popup.open{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+img.thumbnail{
+    cursor: pointer;
+}
+

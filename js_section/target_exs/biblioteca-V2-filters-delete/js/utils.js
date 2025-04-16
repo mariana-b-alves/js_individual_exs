@@ -16,11 +16,21 @@ const getNotReadBooks = () => livros.filter( livro => livro.alreadyRead === fals
 //Pesquisa pelo título
 const getBooksByTitle = (text) => livros.filter( livro => {
     let title = livro.title.toLowerCase();
-    return title.search(text) > -1;
+    let author = livro.author.toLowerCase();
+    return (author.search(text) > -1) || (title.search(text) > -1);
 });
 
 //Delete do book pr id
 const deleteBook = (id) => livros = livros.filter ( livro => livro.id !== Number(id));
 
-//Criar popup
-const getPopup = (id) => livros = livros.filter ( livro => livro.imageUrlGr);
+
+
+//*MÉTODOS QUE NÃO IMPLICAM ALTERAÇÃO DO MODELO DE DADOS
+
+//Mostrar popup
+
+const showPopup = url => {
+    popup.classList.add('open');
+    popup.firstElementChild.src = url;
+}
+const closePopup = () => popup.classList.remove('open');
