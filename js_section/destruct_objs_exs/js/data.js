@@ -43,6 +43,6 @@ let livros = [
 
 let [{id, title, author, alreadyRead, imageUrl, imageUrlGr}] = livros;
 
-console.log('Title: ', title);
+console.log('Image Url Gr.: ', livros);
 
 

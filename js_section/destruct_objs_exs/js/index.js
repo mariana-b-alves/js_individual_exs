@@ -66,25 +66,26 @@ showBooks(getBooks());
 
 function showBooks(arrayBooks){
     grid.innerHTML = '';
+    
 
-    arrayBooks.map( book => {
+    arrayBooks.map( books => {
         grid.innerHTML += `
             <article>
-                <h1>${book.title}</h1>
+                <h1>${books.title}</h1>
 
-                <h2>${book.author}</h2>
+                <h2>${books.author}</h2>
 
-                <img src="livros/${book.imageUrl}" 
-                     alt="${book.title}}" 
+                <img src="livros/${books.imageUrl}" 
+                     alt="${books.title}}" 
                      data-type='thumbnail' 
-                     data-popup='livros/${book.imageUrlGr}'
+                     data-popup='livros/${books.imageUrlGr}'
                      class='thumbnail'
                 >
-                <p>Already read: ${book.alreadyRead ? '✅' : '❌' }  </p>
+                <p>Already read: ${books.alreadyRead ? '✅' : '❌' }  </p>
 
-                <button class='btn' data-type='deleteBtn' data-idbook=${book.id}> Delete </button>
+                <button class='btn' data-type='deleteBtn' data-idbook=${books.id}> Delete </button>
 
-                <button class='btn' data-type='editBtn' data-idbook=${book.id}> Edit </button>
+                <button class='btn' data-type='editBtn' data-idbook=${books.id}> Edit </button>
             </article>
         `;
     })
