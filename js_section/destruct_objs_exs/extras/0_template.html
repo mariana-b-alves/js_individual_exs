@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá Mundo!</h1>
+
+       <div id="btns">
+            <!--É mais necessário quando é gerado dinamicamente-->
+            <button data-id="12345" data-name="Joao" data-apelido="Goncalves">
+                João
+            </button>
+    
+            <button data-id="678" data-name="Maria" data-apelido="Silva">
+                Maria
+            </button>
+    
+            <button data-id="12345" data-name="Manuel" data-apelido="Antunes">
+                Manuel
+            </button>
+       </div>
+   
+
+        <section id="output"></section> 
+
+
+    <script>
+        let output = document.getElementById('output');
+        let btn = document.querySelector('button')
+        let btns = document.querySelector('#btns')
+
+        btns.addEventListener('click', aoClickar, false);
+
+        function aoClickar(e){
+            console.log(e.target.dataset);
+        }
+
+    </script>
+    
+</body>
+</html>
