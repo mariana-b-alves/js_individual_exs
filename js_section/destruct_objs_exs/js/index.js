@@ -3,6 +3,9 @@ let grid = document.getElementById('grid');
 let filters = document.getElementById('filters');
 let popup = document.getElementById('popup');
 
+let addEditBtn = document.getElementById('addEditBtn');
+let bookForm = document.getElementById('bookForm');
+
 //changeEvent = muda a cada introdução de caracter (melhor para forms)
 //inputEvent = alterar o valor do input (input type = text; textarea...)
 
@@ -34,9 +37,8 @@ function filterEvents(e){
         let text = el.value.toLowerCase();
         showBooks(getBooksByAuthorTitle(text))
     }
-
-
 }
+
 
 function gridEvents(e){
     console.log(e);
@@ -59,6 +61,10 @@ function gridEvents(e){
 }
 
 
+addEditBtn.addEventListener('click', () => {
+    const isVisible = bookForm.style.display === 'block';
+    bookForm.style.display = isVisible ? 'none' : 'block';
+});
 
 //?LISTENERS
 //console.log(livros);
@@ -89,6 +95,54 @@ function showBooks(arrayBooks){
             </article>
         `;
     })
+
+    grid.addEventListener('click', (e) => {
+        if (e.target.dataset.type === 'editBtn') {
+            const id = e.target.dataset.idbook;
+            const bookToEdit = livros.find(b => b.id === Number(id));
+    
+            if (bookToEdit) {
+                document.getElementById('bookId').value = bookToEdit.id;
+                document.getElementById('title').value = bookToEdit.title;
+                document.getElementById('author').value = bookToEdit.author;
+                document.getElementById('imageUrl').value = bookToEdit.imageUrl;
+                document.getElementById('imageUrlGr').value = bookToEdit.imageUrlGr;
+                document.getElementById('alreadyRead').checked = bookToEdit.alreadyRead;
+    
+                updatePreview(thumbInput, thumbPreview);
+                updatePreview(largeInput, largePreview);
+            }
+    
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
 }
+
+
+
+let thumbInput = document.getElementById('imageUrl');
+let largeInput = document.getElementById('imageUrlGr');
+let thumbPreview = document.getElementById('thumbPreview');
+let largePreview = document.getElementById('largePreview');
+
+function updatePreview(input, preview, folder = 'livros/') {
+    let filename = input.value.trim();
+    if (filename) {
+        preview.src = `${folder}${filename}`;
+        preview.style.display = 'block';
+    } else {
+        preview.src = '';
+        preview.style.display = 'none';
+    }
+}
+
+thumbInput.addEventListener('input', () => {
+    updatePreview(thumbInput, thumbPreview);
+});
+
+largeInput.addEventListener('input', () => {
+    updatePreview(largeInput, largePreview);
+});
+
 
 

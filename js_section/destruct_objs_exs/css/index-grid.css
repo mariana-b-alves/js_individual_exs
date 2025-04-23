@@ -8,10 +8,12 @@
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
+    align-content: center;
 }
 
 img {
     max-width: 100%;
+    border-radius: 10px;
 }
 
 body > h1{
@@ -28,7 +30,9 @@ section.grid {
 }
 
 section.grid article{
-    border: 1px solid gray;
+    box-shadow: 2px 2px 4px gray;
+    background-color: rgb(252, 218, 203);
+    
     border-radius: 8px;
     padding: 1em;
 
@@ -40,14 +44,14 @@ section.grid article > *{
 
 .btn{
     padding: .5em 1em;
-    background-color: darkolivegreen;
+    background-color: rgb(111, 51, 2);
     color: white;
     border-radius: 8px;
 }
 
 
 section.filters {
-    background-color: rgb(120, 206, 120);
+    background-color: rgb(244, 124, 27);
     padding: 2em;
 
     display: flex;
@@ -62,9 +66,6 @@ input.searchTxt{
     outline: none;
 }
 
-
-
-
 section.popup{
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
@@ -72,12 +73,7 @@ section.popup{
     left: 0;
 
     display: none;
-
 }
-
-
-
-
 
 section.popup.open{
     width: 100vw;
@@ -92,4 +88,50 @@ section.popup.open{
 img.thumbnail{
     cursor: pointer;
 }
+
+.bookForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(252, 218, 203);
+    box-shadow: 2px 2px 4px gray;
+    padding: 2em;
+}
+
+#bookForm {
+    display: none;
+}
+
+input{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .4em;
+
+    border-radius: 20px;
+
+}
+
+section.previewPicsHolder{
+   margin-top: 2.1em;
+   align-items: center;
+}
+.previewPicsHolder p{
+    margin-bottom: 1.4em;
+}
+
+article.previewPics{
+    display: flex; 
+    justify-content: center;
+}
+
+.thumbPreview, .largePreview{
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    max-width: 2em;
+    display: none;
+}
+
+
 

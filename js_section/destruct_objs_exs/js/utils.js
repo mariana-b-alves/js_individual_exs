@@ -34,3 +34,12 @@ const showPopup = url => {
     popup.firstElementChild.src = url;
 }
 const closePopup = () => popup.classList.remove('open');
+
+
+const showAddEditForm = url =>{
+    showAddEditForm.classList.add('open');
+    showAddEditForm.firstElementChild.src = url;
+
+}
+
+const closeAddEditForm = () => showAddEditForm.classList.remove('open');

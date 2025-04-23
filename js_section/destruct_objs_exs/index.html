@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index-grid.css">
-    <title>Biblioteca de Livros de JS</title>
+    <title>My JS Library</title>
 </head>
 <body>
     <section class="filters" id="filters">
+        
         <div>
             <button class="btn" id="allBtn">All</button>
             <button class="btn" id="readBtn">Read</button>
@@ -25,17 +26,49 @@
 
     </section>
 
-    <section class="addEditForm">
-        <p>Título:</p>
-        <input type="title" class="title" id="title" placeholder="Título do livro:">
+    <form class="bookForm" id="bookForm">
+        <input type="hidden" id="bookId">
+        
+        <p>Title</p>
+        <input type="text" id="title" placeholder="Title" required >
 
-        <p>Nome do autor:</p>
-        <input type="name" class="name" id="name" placeholder="Nome do autor:">
+        <p>Author:</p>
+        <input type="text" id="author" placeholder="Author" required>
 
-        <p>Nome do autor:</p>
-        <input type="name" class="name" id="name" placeholder="Nome do autor:">
+        <p>File Name:</p>
+        <input type="text" id="imageUrl" placeholder="Image File Name (ex: book.jpg)" required>
 
-    </section>
+        <p>Large Image File Name:</p>
+        <input type="text" id="imageUrlGr" placeholder="Popup File Name (ex: bookGr.png)" required>
+
+        <br>
+        
+        <label>
+          Already Read?
+          <input type="checkbox" id="alreadyRead">
+        </label>
+        
+        <br>
+
+        <button class="btn" type="submit" id="addBtn">Add Book</button>
+        <button class="btn" type="submit" id="editBtn">Edit</button>
+    </form>
+
+<section class="previewPicsHolder">
+
+    <p>Thumbnail Preview:</p>
+
+    <article class = "previewPics">
+        <img id="thumbPreview" class="thumbPreview">
+    </article>
+    
+    <p>Large Preview:</p>
+
+    <article class = "previewPics">
+        <img id="largePreview" class="largePreview">
+     </article>
+
+  </section>
 
     <section class="grid" id="grid">
     </section>
@@ -43,12 +76,10 @@
     <section class="popup" id="popup">
         <img src="livros/jojGr.png" alt="">
     </section>
-    
-
-    
 
     <script src="js/data.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/bookManager.js"></script>
 </body>
 </html>
