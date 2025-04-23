@@ -94,41 +94,18 @@ function showBooks(arrayBooks){
                 <button class='btn' data-type='editBtn' data-idbook=${books.id}> Edit </button>
             </article>
         `;
-    })
-
-    grid.addEventListener('click', (e) => {
-        if (e.target.dataset.type === 'editBtn') {
-            const id = e.target.dataset.idbook;
-            const bookToEdit = livros.find(b => b.id === Number(id));
-    
-            if (bookToEdit) {
-                document.getElementById('bookId').value = bookToEdit.id;
-                document.getElementById('title').value = bookToEdit.title;
-                document.getElementById('author').value = bookToEdit.author;
-                document.getElementById('imageUrl').value = bookToEdit.imageUrl;
-                document.getElementById('imageUrlGr').value = bookToEdit.imageUrlGr;
-                document.getElementById('alreadyRead').checked = bookToEdit.alreadyRead;
-    
-                updatePreview(thumbInput, thumbPreview);
-                updatePreview(largeInput, largePreview);
-            }
-    
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    });
+    })  
 }
-
-
 
 let thumbInput = document.getElementById('imageUrl');
 let largeInput = document.getElementById('imageUrlGr');
 let thumbPreview = document.getElementById('thumbPreview');
 let largePreview = document.getElementById('largePreview');
 
-function updatePreview(input, preview, folder = 'livros/') {
+function updatePreview(input, preview, url = 'livros/') {
     let filename = input.value.trim();
     if (filename) {
-        preview.src = `${folder}${filename}`;
+        preview.src = `${url}${filename}`;
         preview.style.display = 'block';
     } else {
         preview.src = '';

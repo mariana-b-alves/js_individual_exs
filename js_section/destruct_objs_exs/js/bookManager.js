@@ -29,8 +29,7 @@ const form = document.getElementById('bookForm');
 const addBtn = document.getElementById('addBtn');
 const editBtn = document.getElementById('editBtn');
 
-// Track which button was clicked
-let activeSubmitAction = 'add'; // default
+let activeSubmitAction = 'add';
 
 addBtn.addEventListener('click', () => activeSubmitAction = 'add');
 editBtn.addEventListener('click', () => activeSubmitAction = 'edit');
@@ -71,7 +70,5 @@ form.addEventListener('submit', function (e) {
     thumbPreview.style.display = 'none';
     largePreview.style.display = 'none';
 
-    activeSubmitAction = 'add'; // reset to default
+    activeSubmitAction = 'add';
 });
-
-

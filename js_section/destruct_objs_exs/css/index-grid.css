@@ -32,7 +32,7 @@ section.grid {
 section.grid article{
     box-shadow: 2px 2px 4px gray;
     background-color: rgb(252, 218, 203);
-    
+
     border-radius: 8px;
     padding: 1em;
 
@@ -129,7 +129,7 @@ article.previewPics{
     margin-top: 1em;
     margin-bottom: 2em;
 
-    max-width: 2em;
+    width: 9em;
     display: none;
 }
 
