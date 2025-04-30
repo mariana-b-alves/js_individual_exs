@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index-grid.css">
+    <title>Biblioteca de Livros de JS</title>
+    
+</head>
+<body>
+    <section class="filters" id="filters">
+        <div>
+            <button class="btn" id="allBtn">All</button>
+            <button class="btn" id="readBtn">Read</button>
+            <button class="btn" id="notReadBtn">Not Read</button>
+        </div>
+        <div>
+            <label for="searchTxt">Search Title</label>
+            <input type="search" class="searchTxt" id="searchTxt">
+        </div>
+        <button class="btn" id="showForm">Show Form</button>
+    </section>
+
+    <section class="addEditForm" id="addEditForm">
+        <h1>Add & Edit Books</h1>
+        <form autocomplete="off" >
+            <div>
+                <label for="title">title</label>
+                <input type="text" id="title">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" id="author">
+            </div>
+            <div>
+                <label for="imageUrl">Image Thunbnail</label>
+                <input type="text" id="imageUrl">
+            </div>
+            <div>
+                <label for="imageUrlGr">Image Popup</label>
+                <input type="text" id="imageUrlGr">
+            </div>
+            <div>
+                <label for="alreadyRead">Already Read</label>
+                <input type="checkbox" id="alreadyRead">
+            </div>
+            <div>
+                <button class="btn" id="addBookBtn">add Book</button>
+                <button class="btn" id="updateBookBtn">Update Book</button>
+            </div>
+          
+        </form>
+    </section>
+
+    <section class="grid" id="grid">
+    </section>
+
+    <section class="popup" id="popup">
+        <img src="livros/jojGr.png" alt="">
+    </section>
+
+  <!--   <script src="js/data.js"></script>
+    <script src="js/utils.js"></script> -->
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

@@ -8,12 +8,6 @@ showBooks(getNotReadBooks()); */
 
 function showBooks(arrayBooks){
     arrayBooks.map( book =>{
-    grid.innerHTML+= `
-    <article>
-            <h1>${book.title}</h1>
-            <h2>${book.author}</h2>
-            <img src=${book.imageUrl} alt="${book.title}">
-            <p>Already read: ${book.alreadyRead ? '✔️':'✖️'}</p>
-       </article> `
+   
 });
 }
