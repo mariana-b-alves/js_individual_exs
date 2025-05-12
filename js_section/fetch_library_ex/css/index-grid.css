@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    align-content: center;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+body > h1{
+    margin: 1em 0;
+    border-bottom: 2px solid gray;
+    padding: 1em;
+}
+
+section.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+    padding: 1em;
+}
+
+section.grid article{
+    box-shadow: 2px 2px 4px gray;
+    background-color: rgb(252, 218, 203);
+
+    border-radius: 8px;
+    padding: 1em;
+
+}
+
+section.grid article > *{
+    margin: .8em 0;
+}
+
+.btn{
+    padding: .5em 1em;
+    background-color: rgb(111, 51, 2);
+    color: white;
+    border-radius: 8px;
+}
+
+
+section.filters {
+    background-color: rgb(244, 124, 27);
+    padding: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    font-size: 1.2rem;
+}
+
+input.searchTxt{
+    padding: .5em;
+    outline: none;
+}
+
+section.popup{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top:0;
+    left: 0;
+
+    display: none;
+}
+
+section.popup.open{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+img.thumbnail{
+    cursor: pointer;
+}
+
+.bookForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(252, 218, 203);
+    box-shadow: 2px 2px 4px gray;
+    padding: 2em;
+}
+
+#bookForm {
+    display: none;
+}
+
+input{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .4em;
+
+    border-radius: 20px;
+}
+
+section.previewPicsHolder{
+   margin-top: 2.1em;
+   align-items: center;
+}
+.previewPicsHolder p{
+    margin-bottom: 1.4em;
+}
+
+article.previewPics{
+    display: flex; 
+    justify-content: center;
+}
+
+.thumbPreview, .largePreview{
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    width: 9em;
+    display: none;
+}
+input.searchTxt {
+    padding: .5em;
+    outline: none;
+}
+
+section.addEditForm.open{
+    height: 350px;
+}
+
+section.addEditForm div{
+    padding: .3em;
+}
+
+section.addEditForm input, section.addEditForm label{
+    display: block;
+    text-align: left;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+
